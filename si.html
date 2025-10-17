@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        categories-section {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.categories-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+}
+
+.category-box {
+  width: 350px;
+  background: #fff;
+  border-radius: 28px;
+  text-align: center;
+  padding: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-box:hover {
+  transform: translateY(-8px);
+}
+
+.category-img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;/* keeps aspect ratio */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.category-box h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.category-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+
+.explore-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #0e0c0c;
+  color: #ffffff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.explore-btn:hover {
+  background-color: #ffffff;
+  color: #131111;
+  border-color: #000;
+}
+.arrow {
+  margin-left: 5px;
+}
+
+
+/* 🔹 Responsive for mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .categories-wrapper {
+    flex-direction: column;   /* stack cards vertically */
+    gap: 30px;                /* reduce spacing */
+    align-items: center;      /* center align */
+  }
+
+  .category-box {
+    width: 80%;               /* take almost full width */
+    max-width: 4000px;         /* don’t go too wide */
+    padding: 15px;
+  }
+
+  .category-img {
+    height: 400px;            /* smaller image */
+  }
+
+  .category-box h3 {
+    font-size: 18px;
+  }
+
+  .category-box p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .explore-btn {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  #categories h2 {
+    font-size: 26px !important; /* smaller heading */
+  }
+
+  #categories p {
+    font-size: 18px !important; /* smaller subheading */
+  }
+}
+
+    </style>
+</head>
+<body>
+    <section id="categories">
+  <h2 style="color: #0c0c0c; text-align: center; margin-bottom: 40px; font-size: 40px;">
+    Poster Categories
+  </h2>
+  
+  <p style="text-align: center; font-size: 32px; font-family: 'Playfair Display', serif;">
+    Explore Different Types of Posters
+  </p>
+
+  <div class="categories-section">
+    <div class="categories-wrapper">
+
+      <div class="category-box">
+        <img src="Picsart_25-10-17_16-28-47-644.png" alt="Movie Posters" class="category-img">
+        <h3>Movie Posters</h3>
+        <p>Discover trending movie posters from your favorite films and actors.</p>
+        <a href="cinema.html" class="explore-btn">Explore Movies</a>
+      </div>
+
+       <div class="category-box">
+        <img src="Picsart_25-10-17_16-29-25-013.png" alt="Movie Posters" class="category-img">
+        <h3>Sports Posters</h3>
+        <p>Celebrate your favorite players and teams with sports posters.</p>
+        <a href="sport.html" class="explore-btn">Explore Sports</a>
+      </div>
+
+
+      <div class="category-box">
+        <img src="Picsart_25-10-17_16-29-57-946.png" alt="Movie Posters" class="category-img">
+        <h3>Motivational Posters</h3>
+        <p>Boost your day with inspiring motivational poster collections.</p>
+        <a href="motivational.html" class="explore-btn">Explore Motivation</a>
+      </div>
+
+     
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="category.html" class="explore-btn">View All Categories <span class="arrow">→</span></a>
+  </div>
+</section>
+</body>
+</html>

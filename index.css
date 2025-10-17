@@ -345,7 +345,7 @@ button:hover {
 
 @media (max-width: 480px) {
   .course-icon {
-    height: 120px;
+    height: 200px;
   }
 
   .explore-btn {
