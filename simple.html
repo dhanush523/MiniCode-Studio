@@ -6,25 +6,30 @@
   <title>Contact Us - Sales Inquiry</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <script>
-   document.getElementById("inquiryForm").addEventListener("submit", function(e){
-  e.preventDefault(); // prevent default form submission
-
-  // Get form values
-  const name = encodeURIComponent(document.getElementById("name").value);
-  const email = encodeURIComponent(document.getElementById("email").value);
-  const product = encodeURIComponent(document.getElementById("product").value);
-  const message = encodeURIComponent(document.getElementById("message").value);
-
-  // Create mailto link
-  const subject = encodeURIComponent("Inquiry about Projects");
-  const body = `Name: ${name}%0AEmail: ${email}%0AProduct: ${product}%0AMessage: ${message}`;
-  const mailtoLink = `mailto:dhanushshankar74@gmail.com?subject=${subject}&body=${body}`;
-
-  // Open default email client
-  window.location.href = mailtoLink;
-});
+   
 
 
+
+
+function openGmail() {
+    const email = "dhanushshankar74@gmail.com";
+    const subject = "Inquiry about Mini Projects ";
+const body = "Hello MiniCode Studio, I am interested in purchasing a project . Please provide more details.";
+
+    
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // 📱 Mobile → open Gmail app (mailto:)
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    } else {
+      // 💻 Desktop → open Gmail web
+      window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+        "_blank"
+      );
+    }
+  }
 </script>
   <style>
     * {
@@ -281,10 +286,9 @@ margin-right: 50%;
       <!-- Social Media -->
       <div class="social-icons">
   <!-- Gmail / Email -->
-  <a href="https://mail.google.com/mail/?view=cm&to=dhanushshankar74@gmail.com&su=Inquiry&body=Hello, I would like more information about your projects." 
-   target="_blank" title="Gmail Web">
-  <i class="fa-solid fa-envelope"></i>
-</a>
+  <a href="#" onclick="openGmail()" target="_blank">
+          <i class="far fa-envelope"></i>
+        </a>
 
   <!-- WhatsApp with pre-filled message -->
   <a href="https://wa.me/9360362776?text=Hello!%20I%20am%20interested%20in%20your%20projects." 
