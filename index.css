@@ -328,6 +328,11 @@ button:hover {
     font-size: 20px;
   }
 
+  h3{
+        font-size: 20px;
+
+  }
+
   .course-box p {
     font-size: 14px;
   }
@@ -354,6 +359,10 @@ button:hover {
 
   .course-box p {
     font-size: 13px;
+  }
+
+   h3 {
+    font-size: 20px;
   }
 }
 
