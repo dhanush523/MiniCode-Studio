@@ -63,6 +63,10 @@
     .card-content {
       padding: 18px 20px;
       text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card-content h3 {
@@ -74,7 +78,14 @@
     .card-content p {
       font-size: 14px;
       color: #666;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ff0404;
+      margin-bottom: 15px;
     }
 
     .buttons {
@@ -131,11 +142,13 @@
 <body>
   <h1>Mini Projects for Beginners</h1>
   <div class="projects">
+
     <div class="card">
       <img src="home.jpg" alt="Project 1">
       <div class="card-content">
         <h3>Project 1</h3>
         <p>Build a simple and elegant website using HTML & CSS.</p>
+        <div class="price">₹199</div>
         <div class="buttons">
           <button class="btn view-btn">View</button>
           <button class="btn buy-btn">Buy</button>
@@ -144,10 +157,11 @@
     </div>
 
     <div class="card">
-      <img src="home.jpg" alt="Project 1">
+      <img src="home.jpg" alt="Project 2">
       <div class="card-content">
         <h3>Project 2</h3>
         <p>Learn JavaScript fundamentals by creating a to-do list app.</p>
+        <div class="price">₹299</div>
         <div class="buttons">
           <button class="btn view-btn">View</button>
           <button class="btn buy-btn">Buy</button>
@@ -156,62 +170,57 @@
     </div>
 
     <div class="card">
-      <img src="home.jpg" alt="Project 1">
+      <img src="home.jpg" alt="Project 3">
       <div class="card-content">
         <h3>Project 3</h3>
         <p>Build a responsive portfolio with modern web design principles.</p>
+        <div class="price">₹249</div>
         <div class="buttons">
           <button class="btn view-btn">View</button>
           <button class="btn buy-btn">Buy</button>
         </div>
       </div>
     </div>
-    
 
     <div class="card">
-      <img src="home.jpg" alt="Project 1">
+      <img src="home.jpg" alt="Project 4">
       <div class="card-content">
-        <h3>Project 3</h3>
-        <p>Build a responsive portfolio with modern web design principles.</p>
+        <h3>Project 4</h3>
+        <p>Design a login and registration system using HTML, CSS, and JS.</p>
+        <div class="price">₹199</div>
         <div class="buttons">
           <button class="btn view-btn">View</button>
           <button class="btn buy-btn">Buy</button>
         </div>
       </div>
     </div>
-
-
 
     <div class="card">
-      <img src="home.jpg" alt="Project 1">
+      <img src="home.jpg" alt="Project 5">
       <div class="card-content">
-        <h3>Project 3</h3>
-        <p>Build a responsive portfolio with modern web design principles.</p>
+        <h3>Project 5</h3>
+        <p>Build a calculator app to strengthen your JS logic skills.</p>
+        <div class="price">₹179</div>
         <div class="buttons">
           <button class="btn view-btn">View</button>
           <button class="btn buy-btn">Buy</button>
         </div>
       </div>
     </div>
-
-
 
     <div class="card">
-      <img src="home.jpg" alt="Project 1">
+      <img src="home.jpg" alt="Project 6">
       <div class="card-content">
-        <h3>Project 3</h3>
-        <p>Build a responsive portfolio with modern web design principles.</p>
+        <h3>Project 6</h3>
+        <p>Create a weather app using OpenWeather API and JavaScript.</p>
+        <div class="price">₹299</div>
         <div class="buttons">
           <button class="btn view-btn">View</button>
           <button class="btn buy-btn">Buy</button>
         </div>
       </div>
     </div>
+
   </div>
-
-
-
-
-  
 </body>
 </html>
