@@ -371,7 +371,7 @@ button:hover {
  /*  */
 
    
-    #contact {
+    /* #contact {
       background-color: #f7f7f7;
       display: flex;
       justify-content: center;
@@ -394,7 +394,7 @@ button:hover {
       width: 100%;
     }
 
-    /* Left Section */
+    Left Section
     .contact-info {
       background: #000;
       color: #fff;
@@ -428,7 +428,7 @@ button:hover {
       margin-right: 8px;
     }
 
-    /* Social Icons */
+    Social Icons
     .social-icons {
       margin-top: 30px;
       display: flex;
@@ -447,12 +447,12 @@ button:hover {
     }
 
     .social-icons a:hover {
-      /* background: #ff3b1f; */
+      background: #ff3b1f;
       color: #fff;
       transform: translateY(-3px);
     }
 
-    /* Right Section */
+    Right Section
     .contact-form {
       flex: 1.2;
       padding: 50px 40px;
@@ -508,7 +508,6 @@ button:hover {
 
    
 
-    /* Adjust contact-wrapper for smaller screens */
 @media (max-width: 900px) {
   .contact-wrapper {
     flex-direction: column;
@@ -522,11 +521,10 @@ button:hover {
 
   .contact-info {
     text-align: center;
-    border-radius: 15px 15px 0 0; /* smooth top corners */
-  }
+    border-radius: 15px 15px 0 0; 
 
   .contact-form {
-    border-radius: 0 0 15px 15px; /* smooth bottom corners */
+    border-radius: 0 0 15px 15px;
   }
 
   .social-icons {
@@ -536,7 +534,6 @@ button:hover {
   }
 }
 
-/* Extra small screens */
 @media (max-width: 480px) {
   .contact-wrapper {
     width: 100%;
@@ -572,32 +569,156 @@ button:hover {
     font-size: 14px;
   }
 }
-
-/* Container for contact info items */
+}
 .contact-info .info {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* space between items */
+  gap: 15px; 
 }
 
-/* Each info item */
+Each info item
 .contact-info .info p {
   display: flex;
   align-items: center;
 margin-right: 50%;
-  gap: 10px; /* space between icon and text */
+  gap: 10px; 
   font-size: 15px;
   color: #eee;
   margin: 0;
 }
 
-/* Horizontal layout for larger screens */
 @media (min-width: 600px) {
   .contact-info .info {
     flex-direction: row;
     display: flex;
   flex-direction: column;
-  gap: 15px; /* space between items */
+  gap: 15px;
   }
 }
+ */
 
+  #contact {
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 30px 10px;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      max-width: 950px;
+      width: 100%;
+    }
+
+    .contact-info {
+      background: #000;
+      color: #fff;
+      padding: 50px 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-info h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      color: #ccc;
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .info p {
+      margin-bottom: 10px;
+      color: #eee;
+      font-size: 15px;
+    }
+
+    .contact-info i {
+      color: #ffffff;
+      margin-right: 8px;
+    }
+
+    .social-icons {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #ff3b1f;
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      flex: 1.2;
+      padding: 50px 40px;
+    }
+
+    .contact-form h3 {
+      color: #222;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border-color: #ff3b1f;
+    }
+
+    form button {
+      width: 100%;
+      padding: 14px;
+      background: #000;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #ff3b1f;
+    }
+
+    @media (max-width: 900px) {
+      .contact-wrapper { flex-direction: column; }
+      .contact-info, .contact-form {
+        padding: 25px 20px;
+        flex: unset;
+      }
+    }

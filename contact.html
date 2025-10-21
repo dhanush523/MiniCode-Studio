@@ -158,8 +158,10 @@
         </div>
 
         <div class="social-icons">
-          <a href="mailto:support@yourbrand.com"><i class="fa-regular fa-envelope"></i></a>
-          <a href="https://wa.me/9360362776?text=Hello!%20I%20am%20interested%20in%20your%20projects." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<!-- Gmail / Email -->
+  <a href="#" onclick="openGmail()" target="_blank">
+          <i class="far fa-envelope"></i>
+        </a>          <a href="https://wa.me/9360362776?text=Hello!%20I%20am%20interested%20in%20your%20projects." target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="https://www.instagram.com/vin_posters" target="_blank"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
@@ -219,6 +221,29 @@
   var lastCol = sheet.getLastColumn();
   sheet.getRange(lastRow, 1, 1, lastCol).setBorder(true, true, true, true, true, true);
 }
+
+
+
+// / --------------------------------------------------------------
+ function openGmail() {
+    const email = "dhanushshankar74@gmail.com";
+    const subject = "Inquiry about Mini Projects ";
+const body = "Hello MiniCode Studio, I am interested in purchasing a project . Please provide more details.";
+
+    
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // 📱 Mobile → open Gmail app (mailto:)
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    } else {
+      // 💻 Desktop → open Gmail web
+      window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+        "_blank"
+      );
+    }
+  }   
   </script>
 </body>
 </html>
