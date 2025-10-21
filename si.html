@@ -1,167 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        categories-section {
-  display: flex;
-  justify-content: center;
-  margin: 40px auto;
-}
+<section id="project">
+  <h2 class="project-title">Projects</h2>
 
-.categories-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 80px;
-}
+  <p class="project-subtitle">
+    "Buy Ready-To-Use Mini Projects And Boost Your Academic Success."
+  </p>
 
-.category-box {
-  width: 350px;
-  background: #fff;
-  border-radius: 28px;
+  <div class="courses-section">
+    <div class="courses-wrapper">
+
+      <!-- Beginner Projects -->
+      <div class="course-box">
+        <img src="Picsart_25-10-17_16-28-47-644.png" alt="Beginner Projects" class="course-icon">
+        <h3>Beginner Projects</h3>
+        <p>Get beginner-friendly projects that help you understand coding basics fast.</p>
+        <p class="price">Starting from ₹200*</p>
+        <a href="html.html" class="explore-btn">View Project</a>
+      </div>
+
+      <!-- Intermediate Projects -->
+      <div class="course-box">
+        <img src="Picsart_25-10-17_16-29-25-013.png" alt="Intermediate Projects" class="course-icon">
+        <h3>Intermediate Projects</h3>
+        <p>Boost your coding confidence with our hands-on intermediate-level projects.</p>
+        <p class="price">Starting from ₹200*</p>
+        <a href="html.html" class="explore-btn">View Project</a>
+      </div>
+
+      <!-- Advanced Projects -->
+      <div class="course-box">
+        <img src="Picsart_25-10-17_16-29-57-946.png" alt="Advanced Projects" class="course-icon">
+        <h3>Advanced Projects</h3>
+        <p>Get advanced projects built with professional features and real-world functionality.</p>
+        <p class="price">Starting from ₹200*</p>
+        <a href="html.html" class="explore-btn">View Project</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* 🌟 General Section Styles */
+#project {
+  background: #f9f9f9;
+  padding: 80px 20px;
   text-align: center;
-  padding: 8px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  font-family: "Poppins", sans-serif;
 }
 
-.category-box:hover {
-  transform: translateY(-8px);
-}
-
-.category-img {
-  width: 100%;
-  height: 400px;
-  object-fit: contain;/* keeps aspect ratio */
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.category-box h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: #222;
-}
-
-.category-box p {
-  font-size: 14px;
-  color: #555;
+.project-title {
+  color: #111;
+  font-size: 42px;
+  font-weight: 700;
   margin-bottom: 20px;
+}
+
+.project-subtitle {
+  font-size: 22px;
+  font-family: "Playfair Display", serif;
+  color: #555;
+  margin-bottom: 50px;
   line-height: 1.5;
 }
 
+/* 🌟 Courses Wrapper */
+.courses-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
 
+/* 🌟 Course Box */
+.course-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.course-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* 🌟 Course Image */
+.course-icon {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.course-box:hover .course-icon {
+  transform: scale(1.05);
+}
+
+/* 🌟 Course Text */
+.course-box h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.course-box p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* 🌟 Price */
+.price {
+  color: #e63946;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* 🌟 Explore Button */
 .explore-btn {
   display: inline-block;
-  padding: 10px 24px;
-  background-color: #0e0c0c;
-  color: #ffffff;
+  padding: 12px 28px;
+  background: #111;
+  color: #fff;
   border-radius: 30px;
-  text-decoration: none;
-  font-size: 15px;
   font-weight: 600;
+  text-decoration: none;
   transition: 0.3s ease;
   border: 2px solid transparent;
 }
 
 .explore-btn:hover {
-  background-color: #ffffff;
-  color: #131111;
-  border-color: #000;
-}
-.arrow {
-  margin-left: 5px;
+  background: #fff;
+  color: #111;
+  border-color: #111;
 }
 
+/* 🌟 Responsive Design */
+@media (max-width: 1024px) {
+  .courses-wrapper {
+    gap: 30px;
+  }
+  .course-icon {
+    height: 240px;
+  }
+}
 
-/* 🔹 Responsive for mobile (max-width: 480px) */
-@media (max-width: 480px) {
-  .categories-wrapper {
-    flex-direction: column;   /* stack cards vertically */
-    gap: 30px;                /* reduce spacing */
-    align-items: center;      /* center align */
+@media (max-width: 768px) {
+  #project {
+    padding: 60px 15px;
   }
 
-  .category-box {
-    width: 80%;               /* take almost full width */
-    max-width: 4000px;         /* don’t go too wide */
-    padding: 15px;
+  .project-title {
+    font-size: 34px;
   }
 
-  .category-img {
-    height: 400px;            /* smaller image */
-  }
-
-  .category-box h3 {
+  .project-subtitle {
     font-size: 18px;
+    margin-bottom: 40px;
   }
 
-  .category-box p {
-    font-size: 13px;
-    line-height: 1.4;
+  .courses-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-box {
+    max-width: 90%;
+  }
+
+  .course-icon {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-title {
+    font-size: 28px;
+  }
+
+  .project-subtitle {
+    font-size: 16px;
+  }
+
+  .course-icon {
+    height: 200px;
+  }
+
+  .course-box h3 {
+    font-size: 20px;
+  }
+
+  .course-box p {
+    font-size: 14px;
   }
 
   .explore-btn {
+    padding: 10px 24px;
     font-size: 14px;
-    padding: 8px 18px;
-  }
-
-  #categories h2 {
-    font-size: 26px !important; /* smaller heading */
-  }
-
-  #categories p {
-    font-size: 18px !important; /* smaller subheading */
   }
 }
-
-    </style>
-</head>
-<body>
-    <section id="categories">
-  <h2 style="color: #0c0c0c; text-align: center; margin-bottom: 40px; font-size: 40px;">
-    Poster Categories
-  </h2>
-  
-  <p style="text-align: center; font-size: 32px; font-family: 'Playfair Display', serif;">
-    Explore Different Types of Posters
-  </p>
-
-  <div class="categories-section">
-    <div class="categories-wrapper">
-
-      <div class="category-box">
-        <img src="Picsart_25-10-17_16-28-47-644.png" alt="Movie Posters" class="category-img">
-        <h3>Movie Posters</h3>
-        <p>Discover trending movie posters from your favorite films and actors.</p>
-        <a href="cinema.html" class="explore-btn">Explore Movies</a>
-      </div>
-
-       <div class="category-box">
-        <img src="Picsart_25-10-17_16-29-25-013.png" alt="Movie Posters" class="category-img">
-        <h3>Sports Posters</h3>
-        <p>Celebrate your favorite players and teams with sports posters.</p>
-        <a href="sport.html" class="explore-btn">Explore Sports</a>
-      </div>
-
-
-      <div class="category-box">
-        <img src="Picsart_25-10-17_16-29-57-946.png" alt="Movie Posters" class="category-img">
-        <h3>Motivational Posters</h3>
-        <p>Boost your day with inspiring motivational poster collections.</p>
-        <a href="motivational.html" class="explore-btn">Explore Motivation</a>
-      </div>
-
-     
-    </div>
-  </div>
-
-  <div style="text-align: center; margin-top: 30px;">
-    <a href="category.html" class="explore-btn">View All Categories <span class="arrow">→</span></a>
-  </div>
-</section>
-</body>
-</html>
+</style>

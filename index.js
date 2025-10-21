@@ -3,7 +3,7 @@ function toggleMenu() {
       navLinks.classList.toggle("active");
     }
 
-
+// --------------------------------------------------------------
  function openGmail() {
     const email = "dhanushshankar74@gmail.com";
     const subject = "Inquiry about Mini Projects ";
@@ -23,3 +23,15 @@ const body = "Hello MiniCode Studio, I am interested in purchasing a project . P
       );
     }
   }   
+
+// --------------------------------------------------------------
+
+
+ 
+    document.getElementById("inquiryForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you! Your inquiry has been sent successfully.");
+      this.reset();
+    });
+  
+    // --------------------------------------------------------------

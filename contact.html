@@ -169,10 +169,11 @@
         <h3>Send Us a Message</h3>
 
         <form id="contactForm">
-          <input type="text" name="entry.1895513741" placeholder="Your Name" required />
-          <input type="email" name="entry.1602851297" placeholder="Your Email" required />
+          <input type="text" name="entry.1096518140" placeholder="Your Name" required />
+          <input type="email" name="entry.1781721657" placeholder="Your Email" required />
+   <input type="tel" name="entry.367905342" placeholder="Your Phone Number" required pattern="[0-9]{10}" />
 
-          <select name="entry.453286591" required>
+          <select name="entry.1568318369" required>
             <option value="">Select services</option>
             <option>Beginner Projects</option>
             <option>Intermediate Projects</option>
@@ -181,7 +182,7 @@
             <option>Other</option>
           </select>
 
-          <textarea name="entry.1782209937" rows="4" placeholder="Your Message or Requirements" required></textarea>
+          <textarea name="entry.630292830" rows="4" placeholder="Your Message or Requirements" required></textarea>
 
           <button type="submit">Send Message</button>
         </form>
@@ -196,7 +197,7 @@
       e.preventDefault(); // stop normal form submit
 
       // Send form data to Google Forms silently
-      fetch('https://docs.google.com/forms/d/e/1FAIpQLSczwTu5zzDvOFNYYtDHSztdFefkvltK58DO6Z_aF1BKaPm1IQ/formResponse', {
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSfUN8po4SdjOO5_NmmyfnDhgU3E_p1X9G4N8KqAWFotKsaV1w/formResponse', {
         method: 'POST',
         body: new FormData(form),
         mode: 'no-cors'
@@ -210,6 +211,14 @@
         alert("❌ Something went wrong. Please try again!");
       });
     });
+
+
+    function onFormSubmit(e) {
+  var sheet = e.range.getSheet();
+  var lastRow = sheet.getLastRow();
+  var lastCol = sheet.getLastColumn();
+  sheet.getRange(lastRow, 1, 1, lastCol).setBorder(true, true, true, true, true, true);
+}
   </script>
 </body>
 </html>
