@@ -13,7 +13,7 @@
 
     .hero {
       min-height: 100vh;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.20), rgba(10, 5, 5, 100)), url("hom.jpg");
+      background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(10, 5, 5, 100)), url("home2.webp");
       background-size: cover;
       background-position: center;
       display: flex;
