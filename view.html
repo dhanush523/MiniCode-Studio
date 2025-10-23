@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Projects for Beginners</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 320px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .project-card h2 {
+    margin: 10px 0 5px;
+  }
+
+  .project-card p {
+    color: #555;
+    padding: 0 10px;
+  }
+
+  .price {
+    color: red;
+    font-weight: bold;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0 20px;
+  }
+
+  .btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .view-btn { background: #007bff; }
+  .buy-btn { background: #28a745; }
+
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+
+  .slides img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .slider-buttons {
+    margin-top: 10px;
+  }
+
+  .slider-buttons button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  .tools {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+
+  .demo-btn {
+    display: inline-block;
+    background: #ff9800;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .demo-btn:hover {
+    background: #e68900;
+  }
+</style>
+</head>
+<body>
+
+<h1>Mini Projects for Beginners</h1>
+
+<div class="projects">
+  <!-- Calculator -->
+  <div class="project-card">
+    <img src="beginer.jpg" alt="">
+    <h2>Calculator</h2>
+    <p>Responsive calculator using HTML, CSS, and JavaScript.</p>
+    <p class="price">₹200</p>
+    <div class="btn-container">
+      <button class="btn view-btn" onclick="openModal('calculator')">View</button>
+      <button class="btn buy-btn">Buy</button>
+    </div>
+  </div>
+
+  <!-- To-Do App -->
+  <div class="project-card">
+    <img src="intermediate.jpg" alt="">
+    <h2>To-Do App</h2>
+    <p>Simple To-Do list with local storage support.</p>
+    <p class="price">₹250</p>
+    <div class="btn-container">
+      <button class="btn view-btn" onclick="openModal('todo')">View</button>
+      <button class="btn buy-btn">Buy</button>
+    </div>
+  </div>
+
+  <!-- Weather App -->
+  <div class="project-card">
+    <img src="advanced.jpg" alt="">
+    <h2>Weather App</h2>
+    <p>Shows live weather info using OpenWeather API.</p>
+    <p class="price">₹300</p>
+    <div class="btn-container">
+      <button class="btn view-btn" onclick="openModal('weather')">View</button>
+      <button class="btn buy-btn">Buy</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= MODALS ======= -->
+
+<!-- Calculator Modal -->
+<div class="modal" id="modal-calculator">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('calculator')">&times;</span>
+    <h2>Calculator</h2>
+    <div class="slider">
+      <div class="slides" id="slides-calculator">
+        <img src="fy.jpg" alt="">
+        <img src="gallery.jpg" alt="">
+        <img src="paper.jpg" alt="">
+      </div>
+    </div>
+    <div class="slider-buttons">
+      <button onclick="prevSlide('calculator')">Prev</button>
+      <button onclick="nextSlide('calculator')">Next</button>
+    </div>
+    <div class="tools"><strong>Tools Used:</strong> HTML, CSS, JavaScript</div>
+    <p>A responsive calculator project to perform arithmetic operations and demonstrate JavaScript event handling.</p>
+    <a class="demo-btn" href="https://yourusername.github.io/calculator-project/" target="_blank">View Demo</a>
+  </div>
+</div>
+
+<!-- To-Do App Modal -->
+<div class="modal" id="modal-todo">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('todo')">&times;</span>
+    <h2>To-Do App</h2>
+    <div class="slider">
+      <div class="slides" id="slides-todo">
+        <img src="https://via.placeholder.com/600x400?text=To-Do+1" alt="">
+        <img src="https://via.placeholder.com/600x400?text=To-Do+2" alt="">
+      </div>
+    </div>
+    <div class="slider-buttons">
+      <button onclick="prevSlide('todo')">Prev</button>
+      <button onclick="nextSlide('todo')">Next</button>
+    </div>
+    <div class="tools"><strong>Tools Used:</strong> HTML, CSS, JavaScript (LocalStorage)</div>
+    <p>A simple task manager app to add, delete, and save your tasks locally in the browser.</p>
+    <a class="demo-btn" href="https://yourusername.github.io/todo-app/" target="_blank">View Demo</a>
+  </div>
+</div>
+
+<!-- Weather App Modal -->
+<div class="modal" id="modal-weather">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal('weather')">&times;</span>
+    <h2>Weather App</h2>
+    <div class="slider">
+      <div class="slides" id="slides-weather">
+        <img src="https://via.placeholder.com/600x400?text=Weather+1" alt="">
+        <img src="https://via.placeholder.com/600x400?text=Weather+2" alt="">
+        <img src="https://via.placeholder.com/600x400?text=Weather+3" alt="">
+      </div>
+    </div>
+    <div class="slider-buttons">
+      <button onclick="prevSlide('weather')">Prev</button>
+      <button onclick="nextSlide('weather')">Next</button>
+    </div>
+    <div class="tools"><strong>Tools Used:</strong> HTML, CSS, JavaScript, OpenWeather API</div>
+    <p>This weather app fetches live data from the OpenWeather API and displays temperature, humidity, and conditions dynamically.</p>
+    <a class="demo-btn" href="https://yourusername.github.io/weather-app/" target="_blank">View Demo</a>
+  </div>
+</div>
+<script>
+  const slideIndex = {
+    calculator: 0,
+    todo: 0,
+    weather: 0
+  };
+
+  function openModal(name) {
+    document.getElementById(`modal-${name}`).style.display = 'flex';
+  }
+
+  function closeModal(name) {
+    document.getElementById(`modal-${name}`).style.display = 'none';
+  }
+
+  function nextSlide(name) {
+    const slides = document.getElementById(`slides-${name}`);
+    slideIndex[name] = (slideIndex[name] + 1) % slides.children.length;
+    slides.style.transform = `translateX(-${slideIndex[name] * 100}%)`;
+  }
+
+  function prevSlide(name) {
+    const slides = document.getElementById(`slides-${name}`);
+    slideIndex[name] = (slideIndex[name] - 1 + slides.children.length) % slides.children.length;
+    slides.style.transform = `translateX(-${slideIndex[name] * 100}%)`;
+  }
+
+  // Auto slide every 3 seconds
+  function autoSlide(name) {
+    setInterval(() => {
+      const modal = document.getElementById(`modal-${name}`);
+      if (modal.style.display === 'flex') {
+        nextSlide(name);
+      }
+    }, 3000);
+  }
+
+  autoSlide('calculator');
+  autoSlide('todo');
+  autoSlide('weather');
+
+  // Close modal when clicking outside
+  window.onclick = function(e) {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  };
+</script>
+
+
+</body>
+</html>
