@@ -1,7 +1,7 @@
  * {
       margin: 0;
       padding: 0;
-      /* box-sizing: border-box; */
+      box-sizing: border-box;
       
     }
 
@@ -603,7 +603,7 @@ margin-right: 50%;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      /* min-height: 100vh; */
+      min-height: 100vh;
       padding: 30px 10px;
     }
 
