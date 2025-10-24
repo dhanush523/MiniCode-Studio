@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Popup Example</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .project-card {
+    display: inline-block;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 20px;
+    width: 250px;
+  }
+
+  .project-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #0056b3;
+  }
+
+  /* Popup styles */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .popup-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+    position: relative;
+    animation: popupAnim 0.3s ease;
+  }
+
+  @keyframes popupAnim {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .popup img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .demo-btn {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+  }
+
+  .demo-btn:hover {
+    background: #1e7e34;
+  }
+</style>
+</head>
+<body>
+
+<h1>My Projects</h1>
+
+<div class="project-card">
+  <img src="https://via.placeholder.com/300x200" alt="Project Image">
+  <h3>Portfolio Website</h3>
+  <button class="btn view-btn"
+          data-title="Portfolio Website"
+          data-img="https://via.placeholder.com/600x400"
+          data-tools="HTML, CSS, JavaScript"
+          data-desc="A personal portfolio website to showcase my projects and skills."
+          data-demo="https://example.com">
+    View
+  </button>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <img id="popup-img" src="" alt="Project Image">
+    <h2 id="popup-title"></h2>
+    <p><strong>Tools:</strong> <span id="popup-tools"></span></p>
+    <p id="popup-desc"></p>
+    <a id="popup-demo" href="#" target="_blank" class="demo-btn">View Demo</a>
+  </div>
+</div>
+
+<script>
+  const viewButtons = document.querySelectorAll('.view-btn');
+  const popup = document.getElementById('popup');
+  const closeBtn = document.getElementById('closeBtn');
+
+  const popupImg = document.getElementById('popup-img');
+  const popupTitle = document.getElementById('popup-title');
+  const popupTools = document.getElementById('popup-tools');
+  const popupDesc = document.getElementById('popup-desc');
+  const popupDemo = document.getElementById('popup-demo');
+
+  viewButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      popupImg.src = button.dataset.img;
+      popupTitle.textContent = button.dataset.title;
+      popupTools.textContent = button.dataset.tools;
+      popupDesc.textContent = button.dataset.desc;
+      popupDemo.href = button.dataset.demo;
+      popup.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  window.addEventListener('click', e => {
+    if (e.target === popup) popup.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
