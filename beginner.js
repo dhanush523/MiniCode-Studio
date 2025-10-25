@@ -42,19 +42,4 @@
     this.reset();
     document.getElementById("price").value = "";
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    

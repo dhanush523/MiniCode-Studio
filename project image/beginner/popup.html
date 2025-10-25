@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin: 40px 0 30px;
+      font-size: 32px;
+      color: #222;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1200px;
+      padding-bottom: 50px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 18px 20px;
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-content h3 {
+      font-size: 20px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #121212;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ff0404;
+      margin-bottom: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      padding: 10px 22px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .view-btn {
+      background: #007bff;
+      color: #fff;
+    }
+
+    .view-btn:hover {
+      background: #0056b3;
+    }
+
+    .buy-btn {
+      background: #28a745;
+      color: #fff;
+    }
+
+    .buy-btn:hover {
+      background: #1e7e34;
+    }
+
+    @media (max-width: 600px) {
+
+      * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .card-content p {
+        font-size: 13px;
+      }
+
+      .btn {
+        font-size: 13px;
+        padding: 8px 18px;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+  /* Reset and general layout */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 10px; /* Add small side padding for mobile */
+  }
+
+ 
+
+  .projects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 20px;
+  }
+
+  .card {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: 100%;
+    height: 310px; /* Adjust image height */
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 12px 15px; /* Reduced padding for smaller screens */
+    text-align: center;
+  }
+
+  .card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card-content p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  
+}
+
+
+
+
+
+
+
+  .buy-btn1 {
+    display: block;
+    margin: 60px auto;
+    background: #007bff;
+    color: #fff;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+  }
+
+  .buy-btn1:hover {
+    background: #0056b3;
+  }
+
+  .form-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 1000;
+  }
+
+  .form-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+  }
+
+  .close-btn {
+    float: right;
+    font-size: 22px;
+    color: #555;
+    cursor: pointer;
+    margin-top: -5px;
+  }
+
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+
+  #price {
+    background: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+  }
+
+  button[type="submit"] {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background: #218838;
+  }
+
+  @media (max-width: 480px) {
+    .form-container {
+      padding: 18px;
+      max-width: 90%;
+    }
+    input, select {
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+
+
+
+
+
+
+/* Popup */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-content {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 200px;
+    cursor: pointer;
+  }
+
+  .slider {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .slide {
+    display: none;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .active {
+    display: block;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .prev { left: 10px; }
+  .next { right: 10px; }
+
+  .demo {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  .demo:hover {
+    background: #1e7e34;
+  }
+
+  
+    </style>
+</head>
+<body>
+    <h1>Mini Projects for Beginners</h1>
+  <div class="projects">
+
+    <div class="card">
+      <img src="calculator.jpg" alt="Project 1">
+      <div class="card-content">
+        <h3>Calculator</h3>
+        <p>This is a responsive calculator using HTML, CSS, and JavaScript.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn"data-title="Simple Portfolio"
+          data-desc="A basic portfolio page with responsive layout."
+          data-tools="HTML, CSS, JS"
+          data-demo="https://example.com"
+          data-images='["colour.jpg","paper.jpg","gallery.jpg"]'>>View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="clock.jpg" alt="Project 1">
+      <div class="card-content">
+        <h3>Digital Clock</h3>
+        <p>This digital clock displays real-time hours, minutes, and seconds.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gmail.jpg" alt="Project 1">
+      <div class="card-content">
+        <h3>Gamil Validation</h3>
+        <p>It includes simple validation to ensure all fields are filled correctly.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="date.jpg" alt="Project 1">
+      <div class="card-content">
+        <h3>Date Difference</h3>
+        <p>This calculator finds the difference between two selected dates.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="gallery.jpg" alt="Project 1">
+      <div class="card-content">
+        <h3>Gallery</h3>
+        <p>This image gallery displays multiple images in a responsive grid layout.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="dice.jpg" alt="Project 1">
+      <div class="card-content">
+        <h3>Dice Roller</h3>
+        <p>This dice roller simulates rolling a six-sided dice randomly.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="notes app.jpg" alt="Notes App">
+      <div class="card-content">
+        <h3>Notes App</h3>
+        <p>This is a Notes App with login, add, update, delete functionality.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="paper.jpg" alt="Rock Paper Scissors">
+      <div class="card-content">
+        <h3>Rock Paper Scissors</h3>
+        <p>This is a Rock Paper Scissors game with score tracking, emojis, and reset functionality.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+
+     <div class="card">
+      <img src="Restaurant.jpg" alt="Restaurant Menu">
+      <div class="card-content">
+        <h3>Restaurant Menu</h3>
+        <p>This is a Restaurant Menu webpage with category filters, images, and prices.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="event.jpg" alt="Event">
+      <div class="card-content">
+        <h3>Event</h3>
+        <p>This is a responsive event invitation page with countdown timer, image, and location button.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="checker.jpg" alt="Palindrome Checker">
+      <div class="card-content">
+        <h3>Palindrome Checker</h3>
+        <p>This is a Palindrome Checker webpage that validates input and shows results interactively.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn">View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="colour.jpg" alt="Colour Patter">
+      <div class="card-content">
+        <h3>Colour Patter</h3>
+        <p>This is a 50-color palette page where clicking a color copies its hex code to clipboard.</p>
+        <div class="price">₹200</div>
+        <div class="buttons">
+          <button class="btn view-btn" data-title="Simple Portfolio"
+          data-desc="A basic portfolio page with responsive layout."
+          data-tools="HTML, CSS, JS"
+          data-demo="https://example.com"
+          data-images='["colour.jpg","paper.jpg","gallery.jpg"]'>>View</button>
+          <button class="btn buy-btn" onclick="openForm()">Buy</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+ <div class="form-popup" id="buyForm">
+  <div class="form-container">
+    <span class="close-btn" onclick="closeForm()">&times;</span>
+    <h2>Buy Project</h2>
+
+    <form id="purchaseForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="number" placeholder="Phone Number" required>
+      <input type="email" name="email" placeholder="Email" required>
+
+      <select id="projectSelect" name="project" onchange="updatePrice()" required>
+        <option value="">Select Project</option>
+        <option value="Calculator">Calculator</option>
+        <option value="Digital Clock">Digital Clock</option>
+        <option value="Gamil Validation">Gamil Validation</option>
+        <option value="Date Difference">Date Difference</option>
+        <option value="Gallery">Gallery</option>
+        <option value="Dice Roller">Dice Roller</option>
+        <!-- <option value="Project 7">Project 7</option>
+        <option value="Project 8">Project 8</option>
+        <option value="Project 9">Project 9</option>
+        <option value="Project 10">Project 10</option> -->
+      </select>
+
+      <select id="optionSelect" name="optionType" onchange="updatePrice()" required>
+        <option value="">Select Option</option>
+        <option value="Only Project">Only Project</option>
+        <option value="Project with Documents">Project with Documents</option>
+      </select>
+
+      <input type="text" id="price" placeholder="Price" readonly>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <span class="close" id="close">&times;</span>
+    <div class="slider" id="slider">
+      <button class="arrow prev" id="prev">&#10094;</button>
+      <button class="arrow next" id="next">&#10095;</button>
+    </div>
+    <h2 id="title"></h2>
+    <p><b>Tools:</b> <span id="tools"></span></p>
+    <p id="desc"></p>
+    <a id="demo" href="#" target="_blank" class="demo">View Demo</a>
+  </div>
+</div>
+</body>
+</html>
+
+<script>
+       function openForm() {
+    document.getElementById("buyForm").style.display = "flex";
+  }
+
+  function closeForm() {
+    document.getElementById("buyForm").style.display = "none";
+  }
+
+  function updatePrice() {
+    const project = document.getElementById("projectSelect").value;
+    const option = document.getElementById("optionSelect").value;
+    const priceField = document.getElementById("price");
+    let price = "";
+
+    // Define prices for each project
+    const prices = {
+      "Calculator": { "Only Project": 200, "Project with Documents": 250 },
+      "Digital Clock": { "Only Project": 200, "Project with Documents": 250 },
+      "Gamil Validation": { "Only Project": 200, "Project with Documents": 250 },
+      "Date Difference": { "Only Project": 200, "Project with Documents": 250 },
+      "Gallery": { "Only Project": 200, "Project with Documents": 250 },
+      "Dice Roller": { "Only Project": 200, "Project with Documents": 250 },
+      // "Project 7": { "Only Project": 700, "Project with Documents": 750 },
+      // "Project 8": { "Only Project": 800, "Project with Documents": 850 },
+      // "Project 9": { "Only Project": 900, "Project with Documents": 950 },
+      // "Project 10": { "Only Project": 1000, "Project with Documents": 1050 }
+    };
+
+    // Update price based on selection
+    if (project && option && prices[project]) {
+      price = prices[project][option] || "";
+    }
+
+    priceField.value = price ? "₹" + price : "";
+  }
+
+  document.getElementById("purchaseForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const price = document.getElementById("price").value;
+    alert(`✅ Order placed successfully! We will reach out to you soon.\nPrice: ${price}`);
+    closeForm();
+    this.reset();
+    document.getElementById("price").value = "";
+  });
+    
+
+
+
+    const buttons = document.querySelectorAll('.btn');
+  const popup = document.getElementById('popup');
+  const close = document.getElementById('close');
+  const slider = document.getElementById('slider');
+  const title = document.getElementById('title');
+  const tools = document.getElementById('tools');
+  const desc = document.getElementById('desc');
+  const demo = document.getElementById('demo');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+
+  let slides = [];
+  let index = 0;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      title.textContent = btn.dataset.title;
+      tools.textContent = btn.dataset.tools;
+      desc.textContent = btn.dataset.desc;
+      demo.href = btn.dataset.demo;
+
+      // create slides
+      const imgs = JSON.parse(btn.dataset.images);
+      slider.querySelectorAll('.slide').forEach(s => s.remove());
+      imgs.forEach((src, i) => {
+        const div = document.createElement('div');
+        div.classList.add('slide');
+        if (i === 0) div.classList.add('active');
+        div.innerHTML = `<img src="${src}" alt="slide">`;
+        slider.appendChild(div);
+      });
+
+      slides = slider.querySelectorAll('.slide');
+      index = 0;
+      popup.style.display = 'flex';
+    });
+  });
+
+  close.addEventListener('click', () => popup.style.display = 'none');
+  window.addEventListener('click', e => { if (e.target === popup) popup.style.display = 'none'; });
+
+  function changeSlide(n) {
+    slides[index].classList.remove('active');
+    index = (index + n + slides.length) % slides.length;
+    slides[index].classList.add('active');
+  }
+
+  prev.addEventListener('click', () => changeSlide(-1));
+  next.addEventListener('click', () => changeSlide(1));
+</script>
